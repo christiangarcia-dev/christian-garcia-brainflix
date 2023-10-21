@@ -1,0 +1,19 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.hero {
+    background-color: $dark-black;
+
+    &__video {
+        width: 100%;
+        margin-bottom: -4.2px;
+
+        @include tablet {
+            padding-inline: 4vw;
+        }
+
+        @include desktop {
+            padding-inline: 17vw;
+        }
+    }
+}
