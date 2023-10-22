@@ -33,7 +33,7 @@
         }
 
         @include desktop {
-            height: 30px;
+            height: 28px;
         }
     }
 
@@ -127,7 +127,7 @@
         color: $white;
         text-transform: uppercase;
         font-size: 0.9rem;
-        font-weight: 700;
+        font-weight: 600;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -148,7 +148,7 @@
         @include desktop {
             margin-right: 6rem;
             width: 280px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
         }
         
         &-icon {

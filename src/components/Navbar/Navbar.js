@@ -7,7 +7,7 @@ function Navbar() {
     return (
         <nav className="navbar">
             <div className="navbar__flex-content">
-                <img className="navbar__logo" src={logoImage} alt="BrainFlix Logo"></img>
+                <img className="navbar__logo" src={logoImage} alt="BrainFlix Logo" href="#"></img>
                 <div className="navbar__flex-sub-content">
                     <label className="navbar__search-label">
                         <img className='navbar__search-input-icon' src={searchIcon}></img>

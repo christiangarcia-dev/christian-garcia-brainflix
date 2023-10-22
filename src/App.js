@@ -15,10 +15,14 @@ function App() {
         <Navbar />
         <Hero />
       </header>
-      <main>
-        <VideoInfo />
-        <Comments />
-        <NextVideos />
+      <main className='main'>
+        <section className='main__one'>
+          <VideoInfo />
+          <Comments />
+        </section>
+        <section className='main__two'>
+          <NextVideos />
+        </section>
       </main>
     </body>
   );

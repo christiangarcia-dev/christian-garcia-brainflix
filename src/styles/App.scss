@@ -1,3 +1,21 @@
 @use './partials/global' as *;
 @use './partials/mixins' as *;
 @use './partials/variables' as *;
+
+.main {
+    @include desktop {
+        display: flex;
+    }
+
+    @include desktop {
+        &__one {
+            width: 65%;
+        }
+    }
+
+    @include desktop {
+        &__two {
+            width: 45%;
+        }
+    }
+}
