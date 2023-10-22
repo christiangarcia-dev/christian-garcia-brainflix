@@ -1,0 +1,186 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.comments {
+    margin-inline: 1rem;
+    width: 100%;
+
+    @include tablet {
+        margin-inline: 2rem;
+    }
+
+    &__amount {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: $black;
+
+        @include tablet {
+            margin-top: 2rem;
+        }
+    }
+
+    &__form {
+        display: flex;
+        margin-right: 2rem;
+
+        @include tablet {
+            margin-right: 4rem;
+        }
+
+        &-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            @include tablet {
+                flex-direction: row;
+                gap: 1.5rem;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+
+    &__field-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__avatar {
+        background-color: $mercury;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-image: url(../../assets/images/Mohan-muruge.jpg);
+        background-position: 10%;
+        background-size: cover;
+
+        &-container {
+            margin-right: 1rem;
+            margin-top: 1.5rem;
+        }
+    }
+
+    &__label {
+        margin-bottom: 0.5rem;
+        font-size: 0.77rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: $silver;
+    }
+
+    &__input {
+        height: 6.25rem;
+        resize: none;
+        padding: 0.6rem 0 0 0.6rem;
+        background-color: $alabaster;
+        border: 1px solid $mercury;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+        color: $dark-black;
+
+        &::placeholder {
+            color: $dark-black;
+        }
+
+        @include tablet {
+            height: 2.5rem;
+            width: 30rem;
+            margin: 0;
+        }
+    }
+
+    &__submit-button {
+        border: 1px solid $blue;
+        border-radius: 4px;
+        height: 2.5rem;
+        background-color: $blue;
+        text-transform: uppercase;
+        color: $white;
+        font-size: 0.78rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        position: relative;
+        cursor: pointer;
+
+        @include tablet {
+            width: 10rem;
+            margin-left: auto;
+            align-self: end;
+            margin-bottom: 0;
+            font-size: 0.73rem;
+        }
+
+        &-icon {
+            background-color: transparent;
+            position: absolute;
+            left: 0.5rem;
+            height: 1.2rem;
+
+            @include tablet {
+                bottom: 0.6rem;
+                height: 1.1rem;
+            }
+        }
+    }
+}
+
+.entries {
+
+    &__comment {
+        margin-inline: 1rem;
+        margin-bottom: 10rem;
+        border-block: 1px solid $mercury;
+        display: flex;
+        flex-direction: row;
+
+        @include tablet {
+            margin-inline: 2rem;
+        }
+
+        &__avatar {
+            background-color: $mercury;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+
+            &-container {
+                margin-right: 1rem;
+                margin-top: 1rem;
+            }
+        }
+
+        &__text {
+            display: flex;
+            flex-direction: column; 
+            width: 100%;
+        }
+
+        &__subgroup {
+            display: flex;
+            margin-top: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        &__name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: $black;
+        }
+
+        &__timestamp {
+            margin-left: auto;
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: $silver;
+        }
+
+        &__description {
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: $dark-black;
+        }
+    }
+}
