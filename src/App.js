@@ -6,6 +6,7 @@ import Navbar from './components/Navbar/Navbar'
 import Hero from './components/Hero/Hero'
 import VideoInfo from './components/VideoInfo/VideoInfo'
 import Comments from './components/Comments/Comments'
+import NextVideos from './components/NextVideos/NextVideos'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <main>
         <VideoInfo />
         <Comments />
+        <NextVideos />
       </main>
     </body>
   );

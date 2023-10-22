@@ -33,7 +33,7 @@ function Comments() {
                                 <h2 className='entries__comment__name'>{videoDetails[0].comments[0].name}</h2>
                                 <h2 className='entries__comment__timestamp'>{new Date(Number(videoDetails[0].comments[0].timestamp)).toLocaleDateString()}</h2>
                             </div>
-                            <p className='entries__comment__description'>{videoDetails[0].comments[0].comment}}</p>
+                            <p className='entries__comment__description'>{videoDetails[0].comments[0].comment}</p>
                         </div>
                     </article>
             </section>
