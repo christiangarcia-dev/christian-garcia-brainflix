@@ -17,7 +17,7 @@ function Hero({currentVideo}) {
 
     return(
         <section className='hero'>
-            <video className='hero__video' poster={videoDetails[0].image}></video>
+            <video className='hero__video' poster={videoDetails[0].image} controls></video>
         </section>
     )
 }

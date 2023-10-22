@@ -1,0 +1,152 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.video-info {
+    margin-inline: 1rem;
+
+    @include tablet {
+        margin-inline: 2rem;
+    }
+
+    @include desktop {
+        margin-left: 8rem;
+    }
+
+    &__title {
+        margin-block: 1rem;
+        font-size: 1.7rem;
+        font-weight: 600;
+        line-height: 2.3rem;
+        color: $black;
+
+        @include tablet {
+            margin-top: 2rem;
+            margin-bottom: 0;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        @include desktop {
+            margin-top: 3rem;
+            font-size: 2.4rem;
+        }
+    }
+
+    &__stats {
+        border-block: 1px solid $mercury;
+        display: flex;
+
+        @include tablet {
+            border-top: none;
+        }
+    }
+
+    &__group {
+        padding-block: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        @include tablet {
+            flex-direction: row;
+            padding-bottom: 0.75rem;
+            gap: 2.3rem;
+        }
+
+        @include desktop {
+            gap: 2.1rem;
+        }
+
+        &:nth-of-type(1) {
+            margin-right: auto; 
+        }
+
+        &:nth-of-type(2) {
+            margin-left: auto;
+            margin-right: 2rem;
+    
+            @include tablet {
+                margin-right: 0;
+            }
+        }
+    }
+    
+    &__channel {
+        color: $black;
+        font-size: 1.05rem;
+        font-weight: 600;
+
+        @include tablet {
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        @include desktop {
+            font-size: 1rem;
+        }
+    }
+
+    &__timestamp {
+        color: $silver;
+        font-size: 1rem;
+        font-weight: 400;
+
+        @include tablet {
+            font-size: 0.9rem;
+        }
+    }
+
+    &__views {
+        color: $silver;
+        font-size: 1rem;
+        font-weight: 400;
+        display: flex;
+        gap: 0.6rem;
+
+        @include tablet {
+            font-size: 0.9rem;
+        }
+
+        &-icon {
+            
+            @include tablet {
+                width: 23px; 
+                height: 16px;
+            }
+        }
+    }
+
+    &__likes {
+        color: $silver;
+        font-size: 1rem;
+        font-weight: 400;
+        display: flex;
+        gap: 0.6rem;
+
+        @include tablet {
+            font-size: 0.9rem;
+        }
+
+        &-icon {
+
+            @include tablet {
+                width: 18px; 
+                height: 17px;
+            }
+        }
+    }
+
+    &__description {
+        margin-block: 1rem;
+        line-height: 1.35rem;
+
+        @include tablet {
+            margin-block: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        @include desktop {
+            margin-bottom: 3rem;
+        }
+    }
+}

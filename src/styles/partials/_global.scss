@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     font-family: 'Avenir', sans-serif;
+    font-weight: 400;
 }
 
 @font-face {
@@ -10,6 +11,13 @@
     src: url('../../assets/fonts/AvenirNextLTPro-Regular.otf') format('opentype'),
     url('../../assets/fonts/AlternativeFiles/AvenirNextLTPro.ttf') format('truetype');
     font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('../../assets/fonts/AvenirNextLTPro-Demi.otf') format('opentype'),
+    url('../../assets/fonts/AlternativeFiles/AvenirNextLTProDemi.ttf') format('truetype');
+    font-weight: 600;
 }
 
 @font-face {
