@@ -5,19 +5,9 @@ import playSvg from '../../assets/icons/play.svg'
 
 function Hero({currentVideo}) {
 
-    const videoRef = useRef(null);
-
-    const togglePlayPause = () => {
-        if (videoRef.current.paused) {
-            videoRef.current.play();
-        } else {
-            videoRef.current.pause();
-        }
-    };
-
     return(
         <section className='hero'>
-            <video className='hero__video' poster={videoDetails[0].image} controls></video>
+            <video className='hero__video' poster={currentVideo.image} controls></video>
         </section>
     )
 }

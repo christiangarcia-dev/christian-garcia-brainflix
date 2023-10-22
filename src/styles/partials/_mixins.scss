@@ -11,3 +11,23 @@
         @content;
     }
 }
+
+@mixin button-hover {
+    &:hover {
+        background-color: $dark-blue;
+        border-color: $dark-blue;
+    }
+}
+
+@mixin button-focus {
+    &:focus {
+        border: 2px solid $blue;
+        outline: none;
+    }
+}
+
+@mixin small {
+    @media (max-width: $small-breakpoint) {
+        @content;
+    }
+}

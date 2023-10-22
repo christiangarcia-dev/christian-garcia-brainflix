@@ -1,15 +1,12 @@
 import './Comments.scss'
-import videoDetails from '../../data/video-details.json'
 import commentIcon from '../../assets/icons/add_comment.svg'
 
-function Comments() {
-
-    const totalComments = 0; 
+function Comments({comments}) {
 
     return (
         <>
             <section className='comments'>
-                <h2 className='comments__amount'>{totalComments} Comments</h2>
+                <h2 className='comments__amount'>{comments.length} Comments</h2>
                 <form class="comments__form">
                     <div className='comments__avatar-container'>
                         <div className="comments__avatar"></div>
@@ -24,18 +21,20 @@ function Comments() {
                 </form>
             </section>
             <section className='entries'>
-                    <article className='entries__comment'>
+                {comments.map(comment => (
+                    <article className='entries__comment' key={comment.id}>
                         <div className='entries__comment__avatar-container'>
                             <div className="entries__comment__avatar"></div>
                         </div>
                         <div className='entries__comment__text'>
                             <div className='entries__comment__subgroup'>
-                                <h2 className='entries__comment__name'>{videoDetails[0].comments[0].name}</h2>
-                                <h2 className='entries__comment__timestamp'>{new Date(Number(videoDetails[0].comments[0].timestamp)).toLocaleDateString()}</h2>
+                                <h2 className='entries__comment__name'>{comment.name}</h2>
+                                <h2 className='entries__comment__timestamp'>{new Date(Number(comment.timestamp)).toLocaleDateString()}</h2>
                             </div>
-                            <p className='entries__comment__description'>{videoDetails[0].comments[0].comment}</p>
+                            <p className='entries__comment__description'>{comment.comment}</p>
                         </div>
                     </article>
+                ))}
             </section>
         </>
     )

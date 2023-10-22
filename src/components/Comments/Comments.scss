@@ -67,8 +67,12 @@
         }
 
         &-container {
-            margin-right: 2.5rem;
+            margin-right: 1.5rem;
             margin-top: 1.5rem;
+
+            @include tablet {
+                margin-right: 2.5rem;
+            }
         }
     }
 
@@ -94,10 +98,7 @@
             color: $dark-black;
         }
 
-        &:focus {
-            border: 2px solid $blue;
-            outline: none;
-        }
+        @include button-focus;
 
         @include tablet {
             height: 2.5rem;
@@ -118,6 +119,8 @@
         margin-bottom: 1rem;
         position: relative;
         cursor: pointer;
+
+        @include button-hover;
 
         @include tablet {
             width: 10rem;
@@ -149,10 +152,13 @@
 
     &__comment {
         margin-inline: 1rem;
-        margin-bottom: 1rem;
-        border-block: 1px solid $mercury;
+        border-bottom: 1px solid $mercury;
         display: flex;
         flex-direction: row;
+
+        &:nth-of-type(1) {
+            border-top: 1px solid $mercury;
+        }
 
         @include tablet {
             margin-inline: 2rem;
