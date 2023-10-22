@@ -80,7 +80,7 @@
     
     &__channel {
         color: $black;
-        font-size: 1.05rem;
+        font-size: 0.9rem;
         font-weight: 600;
 
         @include tablet {
@@ -95,7 +95,7 @@
 
     &__timestamp {
         color: $silver;
-        font-size: 1rem;
+        font-size: 0.9rem;
         font-weight: 400;
 
         @include tablet {
@@ -105,7 +105,7 @@
 
     &__views {
         color: $silver;
-        font-size: 1rem;
+        font-size: 0.9rem;
         font-weight: 400;
         display: flex;
         gap: 0.6rem;
@@ -115,7 +115,9 @@
         }
 
         &-icon {
-            
+            width: 22px; 
+            height: 15px;
+
             @include tablet {
                 width: 23px; 
                 height: 16px;
@@ -125,7 +127,7 @@
 
     &__likes {
         color: $silver;
-        font-size: 1rem;
+        font-size: 0.9rem;
         font-weight: 400;
         display: flex;
         gap: 0.6rem;
@@ -135,17 +137,15 @@
         }
 
         &-icon {
-
-            @include tablet {
-                width: 18px; 
-                height: 17px;
-            }
+            width: 18px;
+            height: 17px;
         }
     }
 
     &__description {
         margin-block: 1rem;
         line-height: 1.35rem;
+        font-size: 0.9rem;
 
         @include tablet {
             margin-block: 1.5rem;
