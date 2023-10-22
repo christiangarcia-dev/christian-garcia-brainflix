@@ -3,6 +3,7 @@
   padding: 0;
   margin: 0;
   font-family: "Avenir", sans-serif;
+  font-weight: 400;
 }
 
 @font-face {
@@ -12,6 +13,26 @@
 }
 @font-face {
   font-family: "Avenir";
+  src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype"), url("../../assets/fonts/AlternativeFiles/AvenirNextLTProDemi.ttf") format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Avenir";
   src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype"), url("../../assets/fonts/AlternativeFiles/AvenirNextLTProBold.ttf") format("truetype");
   font-weight: 700;
+}
+@media (min-width: 1280px) {
+  .main {
+    display: flex;
+  }
+}
+@media (min-width: 1280px) {
+  .main__one {
+    width: 65%;
+  }
+}
+@media (min-width: 1280px) {
+  .main__two {
+    width: 45%;
+  }
 }/*# sourceMappingURL=App.css.map */
