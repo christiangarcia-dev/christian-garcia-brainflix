@@ -1,5 +1,6 @@
 .navbar {
   background-color: #FFFFFF;
+  border-bottom: 1px solid #E1E1E1;
 }
 .navbar__flex-content {
   display: flex;
@@ -136,7 +137,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
-  height: 50px;
+  height: 2.9rem;
   width: 100%;
   text-align: center;
   position: relative;
@@ -148,16 +149,15 @@
 }
 @media (min-width: 768px) {
   .navbar__upload-button {
-    height: 45px;
+    height: 2.9rem;
     margin: 0 5rem 0 1.5rem;
-    width: 400px;
-    font-size: 0.9rem;
+    width: 17.5rem;
   }
 }
 @media (min-width: 1280px) {
   .navbar__upload-button {
     margin-right: 6rem;
-    width: 280px;
+    width: 17.5rem;
     font-size: 0.85rem;
   }
 }

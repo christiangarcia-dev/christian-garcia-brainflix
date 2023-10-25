@@ -1,4 +1,4 @@
-import './styles/App.scss'
+import './App.scss'
 import './styles/partials/_variables.scss'
 import './styles/partials/_mixins.scss'
 import './styles/partials/_global.scss'
@@ -9,6 +9,8 @@ import Hero from './components/Hero/Hero'
 import VideoInfo from './components/VideoInfo/VideoInfo'
 import Comments from './components/Comments/Comments'
 import NextVideos from './components/NextVideos/NextVideos'
+
+import Upload from './pages/Upload/Upload'
 
 function App() {
 
@@ -36,6 +38,7 @@ function App() {
           <NextVideos videos={sideVideos} onVideoSelect={handleVideoSelect} />
         </section>
       </main>
+      <Upload />
     </body>
   );
 }

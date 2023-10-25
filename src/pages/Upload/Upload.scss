@@ -1,0 +1,198 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.upload {
+
+    &__header {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: $black;
+        padding-left: 1rem;
+        padding-block: 1.5rem;
+
+        @include tablet {
+            font-size: 2.3rem;
+            border-bottom: 1px solid $mercury;
+            margin-inline: 2rem;
+            padding-left: 0;
+            margin-bottom: 2rem;
+            padding-top: 2.5rem;
+            padding-bottom: 2rem;
+        }
+
+        @include desktop {
+            margin-inline: 8rem;
+        }
+    }
+
+    &__thumbnail {
+        background-color: $mercury;
+        border-radius: 4px;
+        border-color: transparent;
+        height: 10rem;
+        width: 100%;
+
+        @include tablet {
+            height: 13rem;
+            width: 25rem;
+        }
+
+        @include desktop {
+            height: 12rem;
+            width: 21rem;
+        }
+
+        &-container {
+            margin-bottom: 1rem;
+
+            @include tablet {
+                margin: 0 auto 1.5rem 0rem;
+            }
+
+            @include desktop {
+                margin-right: 2rem;
+                margin-bottom: 0;
+                width: min-content;
+                height: 100%;
+            }
+        }
+        
+        &-header {
+            margin-bottom: 0.5rem;
+            font-size: 0.77rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: $silver;
+
+            @include tablet {
+                font-size: 0.85rem;
+            }
+        }
+    }
+
+    &__form {
+        margin-inline: 1rem;
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            margin-inline: 2rem;
+        }
+
+        @include desktop {
+            flex-direction: row;
+            height: 100%;
+            margin-inline: 8rem;
+        }
+
+        &__label {
+            margin-bottom: 0.5rem;
+            font-size: 0.77rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: $silver;
+
+            @include desktop {
+                font-size: 0.85rem;
+            }
+        }
+
+        &__input {
+            @include input;
+            padding: 0 0 0 0.5rem;
+            height: 3rem;
+
+            @include tablet {
+                width: 100%;
+            }
+
+            &:nth-of-type(1) {
+                margin-bottom: 1rem;
+            }
+
+            &-group {
+                display: flex;
+                flex-direction: column;
+
+                @include desktop {
+                    width: 100%;
+                }
+            }
+
+            &-textarea {
+                @include input;
+                padding: 0.7rem 0 0 0.5rem;
+
+                @include tablet {
+                    width: 100%;
+                    height: 5.5rem;
+                }
+
+                @include desktop {
+                    height: 7rem;
+                }
+            }
+        }
+
+        &__buttons-container {
+            display: flex;
+            flex-direction: column;
+
+            @include tablet {
+                flex-direction: row-reverse;
+                border-top: 1px solid $mercury;
+                padding-top: 1.5rem;
+                margin: 1.5rem 2rem 2rem 2rem;
+            }
+
+            @include desktop {
+                margin-inline: 8rem;
+            }
+        }
+
+        &__submit-button {
+            @include button-blue;
+            height: 2.9rem;
+            margin-inline: 1rem;
+
+            @include tablet {
+                margin: 0;
+                margin-left: 5rem;
+                height: 3rem;
+                width: 10.5rem;
+            }
+
+            @include desktop {
+                width: 12rem;
+            }
+
+            &-icon {
+                background-color: transparent;
+                position: absolute;
+                left: 0.5rem;
+                bottom: 0.5rem;
+                height: 1.6rem;
+
+                @include tablet {
+                    height: 1.5rem;
+                    bottom: 0.7rem;
+                }
+
+                @include desktop {
+                    bottom: 0.6rem;
+                }
+            }
+        }
+
+        &__cancel-button {
+            @include button-transparent;
+            margin-bottom: 1rem;
+            margin-top: 0.5rem;
+
+            @include tablet {
+                margin: 0;
+            }
+        }
+    }
+}

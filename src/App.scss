@@ -1,6 +1,6 @@
-@use './partials/global' as *;
-@use './partials/mixins' as *;
-@use './partials/variables' as *;
+@use '../src/styles/partials/global' as *;
+@use '../src/styles/partials/mixins' as *;
+@use '../src/styles/partials/variables' as *;
 
 .main {
     @include desktop {

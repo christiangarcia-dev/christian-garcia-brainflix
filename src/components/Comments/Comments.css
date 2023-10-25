@@ -93,12 +93,15 @@
 }
 .comments__input::-moz-placeholder {
   color: #000000;
+  font-size: 0.9rem;
 }
 .comments__input:-ms-input-placeholder {
   color: #000000;
+  font-size: 0.9rem;
 }
 .comments__input::placeholder {
   color: #000000;
+  font-size: 0.9rem;
 }
 .comments__input:focus {
   border: 2px solid #0095FF;

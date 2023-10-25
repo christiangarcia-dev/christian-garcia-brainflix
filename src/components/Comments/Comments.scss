@@ -96,6 +96,7 @@
 
         &::placeholder {
             color: $dark-black;
+            font-size: 0.9rem;
         }
 
         @include button-focus;
@@ -149,7 +150,6 @@
 }
 
 .entries {
-
     &__comment {
         margin-inline: 1rem;
         border-bottom: 1px solid $mercury;
