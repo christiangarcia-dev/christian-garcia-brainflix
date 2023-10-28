@@ -2,7 +2,6 @@ import './App.scss'
 import './styles/partials/_variables.scss'
 import './styles/partials/_mixins.scss'
 import './styles/partials/_global.scss'
-import videoDetails from './data/video-details.json'
 import React, { useState, useEffect } from 'react'
 import Navbar from './components/Navbar/Navbar'
 import Upload from './pages/UploadPage/UploadPage'
@@ -12,8 +11,8 @@ import axios from 'axios'
 
 function App() {
 
-  const [currentVideo, setCurrentVideo] = useState(videoDetails[0]);
-  const [videos, setVideos] = useState(videoDetails);
+  const [currentVideo, setCurrentVideo] = useState([]);
+  const [videos, setVideos] = useState([]);
 
   const handleVideoSelect = (video) => {
     setCurrentVideo(video);
@@ -37,13 +36,13 @@ function App() {
 
   return (
     <>
-    <BrowserRouter>
-      <Routes>
-      <Route path="/" element={<HomePage currentVideo={currentVideo} setCurrentVideo={setCurrentVideo} sideVideos={sideVideos} handleVideoSelect={handleVideoSelect} />} />
-      <Route path="/videos/:id" element={<HomePage currentVideo={currentVideo} setCurrentVideo={setCurrentVideo} sideVideos={sideVideos} handleVideoSelect={handleVideoSelect} />} />
-        <Route path="/upload" element={<Upload />} />
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+        <Route path="/" element={<HomePage currentVideo={currentVideo} setCurrentVideo={setCurrentVideo} sideVideos={sideVideos} handleVideoSelect={handleVideoSelect} />} />
+        <Route path="/videos/:id" element={<HomePage currentVideo={currentVideo} setCurrentVideo={setCurrentVideo} sideVideos={sideVideos} handleVideoSelect={handleVideoSelect} />} />
+          <Route path="/upload" element={<Upload />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

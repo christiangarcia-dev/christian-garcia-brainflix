@@ -1,8 +1,16 @@
 import './UploadPage.scss'
 import Navbar from '../../components/Navbar/Navbar'
 import publishIcon from '../../assets/icons/publish.svg'
+import { useNavigate } from 'react-router-dom';
 
 function UploadPage() {
+
+    const navigate = useNavigate();
+
+    const handleSubmit = () => {
+        // add upload logic 
+        navigate("/"); 
+    };
 
     return(
         <>

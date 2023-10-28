@@ -1,5 +1,4 @@
 import './VideoInfo.scss'
-import videoDetails from '../../data/video-details.json'
 import viewsIcon from '../../assets/icons/views.svg'
 import likesIcon from '../../assets/icons/likes.svg'
 import React, { useState } from 'react';

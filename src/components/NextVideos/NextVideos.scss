@@ -83,6 +83,7 @@
 
         &__channel {
             font-size: 0.9rem;
+            color: $black;
 
             @include small {
                 font-size: 0.75rem;
