@@ -1,27 +1,7 @@
-import './Comments.scss'
-import commentIcon from '../../assets/icons/add_comment.svg'
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import './Comments.scss';
+import commentIcon from '../../assets/icons/add_comment.svg';
 
-function Comments() {
-
-    const [comments, setComments] = useState([]);
-    const { id } = useParams(); 
-    const apiKey = '6b4b2c7a-2b87-45bc-a0ba-978e289aa20c';
-
-    useEffect(() => {
-    const fetchData = async () => {
-    try {
-        const response = await axios.get(`https://project-2-api.herokuapp.com/videos/${id}?api_key=${apiKey}`);
-        setComments(response.data.comments);
-    } catch (error) {
-        console.error('Error fetching comments:', error);
-        }
-    };
-
-    fetchData();
-    }, [id]);
+function Comments({ comments }) {
 
     if (!comments) {
         return <div>Loading comments...</div>;
@@ -31,16 +11,16 @@ function Comments() {
         <>
             <section className='comments'>
                 <h2 className='comments__amount'>{comments.length} Comments</h2>
-                <form class="comments__form">
+                <form className="comments__form">
                     <div className='comments__avatar-container'>
                         <div className="comments__avatar"></div>
                     </div>
                     <div className='comments__form-container'>
                         <div className='comments__field-container'>
-                            <label class="comments__label" for="comments-input">Join the conversation</label>
-                            <textarea class="comments__input" type="text" name="comment" placeholder="Add a new comment" id="comments-input"></textarea>
+                            <label className="comments__label" htmlFor="comments-input">Join the conversation</label>
+                            <textarea className="comments__input" type="text" name="comment" placeholder="Add a new comment" id="comments-input"></textarea>
                         </div>
-                        <button class="comments__submit-button" type="submit"><img className='comments__submit-button-icon' src={commentIcon}></img>Comment</button>             
+                        <button className="comments__submit-button" type="submit"><img className='comments__submit-button-icon' src={commentIcon} alt="comment icon"></img>Comment</button>             
                     </div>       
                 </form>
             </section>
@@ -61,7 +41,7 @@ function Comments() {
                 ))}
             </section>
         </>
-    )
+    );
 }
 
 export default Comments;

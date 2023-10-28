@@ -18,7 +18,7 @@ function Navbar() {
                     </label>
                     <div className="navbar__avatar"></div>
                 </div>
-                <NavLink to="/upload">
+                <NavLink className="navbar__upload-button-link" to="/upload">
                     <button className="navbar__upload-button">
                     <img className='navbar__upload-button-icon' src={uploadIcon}></img>Upload</button>
                 </NavLink>

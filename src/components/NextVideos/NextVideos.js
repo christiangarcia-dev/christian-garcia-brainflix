@@ -1,7 +1,7 @@
 import './NextVideos.scss'
 import { Link } from 'react-router-dom';
 
-function NextVideos({videos, onVideoSelect}) {
+function NextVideos({videos}) {
 
     return (
         <section className='videos'>
