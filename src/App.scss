@@ -1,21 +1,21 @@
-@use '../src/styles/partials/global' as *;
-@use '../src/styles/partials/mixins' as *;
-@use '../src/styles/partials/variables' as *;
+// @use '../src/styles/partials/global' as *;
+// @use '../src/styles/partials/mixins' as *;
+// @use '../src/styles/partials/variables' as *;
 
-.main {
-    @include desktop {
-        display: flex;
-    }
+// .main {
+//     @include desktop {
+//         display: flex;
+//     }
 
-    @include desktop {
-        &__one {
-            width: 65%;
-        }
-    }
+//     @include desktop {
+//         &__one {
+//             width: 65%;
+//         }
+//     }
 
-    @include desktop {
-        &__two {
-            width: 45%;
-        }
-    }
-}
+//     @include desktop {
+//         &__two {
+//             width: 45%;
+//         }
+//     }
+// }

@@ -3,14 +3,12 @@ import './styles/partials/_variables.scss'
 import './styles/partials/_mixins.scss'
 import './styles/partials/_global.scss'
 import videoDetails from './data/video-details.json'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react'
 import Navbar from './components/Navbar/Navbar'
-import Hero from './components/Hero/Hero'
-import VideoInfo from './components/VideoInfo/VideoInfo'
-import Comments from './components/Comments/Comments'
-import NextVideos from './components/NextVideos/NextVideos'
-
-import Upload from './pages/Upload/Upload'
+import Upload from './pages/UploadPage/UploadPage'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import HomePage from './pages/HomePage/HomePage'
+import axios from 'axios'
 
 function App() {
 
@@ -23,23 +21,30 @@ function App() {
 
   const sideVideos = videos.filter(video => video.id !== currentVideo.id);
 
+  const apiKey = '6b4b2c7a-2b87-45bc-a0ba-978e289aa20c';
+
+  useEffect(() => {
+    async function getVideos() {
+      axios.get(`https://project-2-api.herokuapp.com/videos?api_key=${apiKey}`)
+        .then(response => {
+          setVideos(response.data);
+          setCurrentVideo(response.data[0] || {});
+        })
+        .catch(error => console.error('Error fetching videos:', error));
+    }
+    getVideos();
+  }, []);
+
   return (
-    <body>
-      <header>
-        <Navbar />
-        <Hero currentVideo={currentVideo}/>
-      </header>
-      <main className='main'>
-        <section className='main__one'>
-          <VideoInfo videoDetails={currentVideo} />
-          <Comments comments={currentVideo.comments}/>
-        </section>
-        <section className='main__two'>
-          <NextVideos videos={sideVideos} onVideoSelect={handleVideoSelect} />
-        </section>
-      </main>
-      <Upload />
-    </body>
+    <>
+    <BrowserRouter>
+      <Routes>
+      <Route path="/" element={<HomePage currentVideo={currentVideo} setCurrentVideo={setCurrentVideo} sideVideos={sideVideos} handleVideoSelect={handleVideoSelect} />} />
+      <Route path="/videos/:id" element={<HomePage currentVideo={currentVideo} setCurrentVideo={setCurrentVideo} sideVideos={sideVideos} handleVideoSelect={handleVideoSelect} />} />
+        <Route path="/upload" element={<Upload />} />
+      </Routes>
+    </BrowserRouter>
+    </>
   );
 }
 

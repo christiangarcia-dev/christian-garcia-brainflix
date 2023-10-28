@@ -1,8 +1,8 @@
-import './Upload.scss'
+import './UploadPage.scss'
 import Navbar from '../../components/Navbar/Navbar'
 import publishIcon from '../../assets/icons/publish.svg'
 
-function Upload() {
+function UploadPage() {
 
     return(
         <>
@@ -32,4 +32,4 @@ function Upload() {
     )
 }
 
-export default Upload;
+export default UploadPage;

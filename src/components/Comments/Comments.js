@@ -1,8 +1,32 @@
 import './Comments.scss'
 import commentIcon from '../../assets/icons/add_comment.svg'
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
-function Comments({comments}) {
+function Comments() {
 
+    const [comments, setComments] = useState([]);
+    const { id } = useParams(); 
+    const apiKey = '6b4b2c7a-2b87-45bc-a0ba-978e289aa20c';
+
+    useEffect(() => {
+    const fetchData = async () => {
+    try {
+        const response = await axios.get(`https://project-2-api.herokuapp.com/videos/${id}?api_key=${apiKey}`);
+        setComments(response.data.comments);
+    } catch (error) {
+        console.error('Error fetching comments:', error);
+        }
+    };
+
+    fetchData();
+    }, [id]);
+
+    if (!comments) {
+        return <div>Loading comments...</div>;
+    }
+    
     return (
         <>
             <section className='comments'>
