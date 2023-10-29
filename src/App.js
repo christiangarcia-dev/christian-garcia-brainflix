@@ -17,7 +17,7 @@ function App() {
   }
 
   const sideVideos = videos.filter(video => video.id !== currentVideo.id);
-
+  
   const apiKey = '6b4b2c7a-2b87-45bc-a0ba-978e289aa20c';
 
   useEffect(() => {

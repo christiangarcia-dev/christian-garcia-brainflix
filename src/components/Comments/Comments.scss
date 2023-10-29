@@ -54,16 +54,16 @@
 
     &__avatar {
         background-color: $mercury;
-        width: 40px;
-        height: 40px;
+        width: 2.5rem;
+        height: 2.5rem;
         border-radius: 50%;
         background-image: url(../../assets/images/Mohan-muruge.jpg);
         background-position: 10%;
         background-size: cover;
 
         @include desktop {
-            width: 44px;
-            height: 44px;
+            width: 2.75rem;
+            height: 2.75rem;
         }
 
         &-container {
@@ -171,13 +171,13 @@
 
         &__avatar {
             background-color: $mercury;
-            width: 40px;
-            height: 40px;
+            width: 2.5rem;
+            height: 2.5rem;
             border-radius: 50%;
 
             @include desktop {
-                width: 44px;
-                height: 44px;
+                width: 2.75rem;
+                height: 2.75rem;
             }
 
             &-container {

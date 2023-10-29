@@ -24,7 +24,6 @@ function HomePage({ currentVideo, setCurrentVideo, sideVideos, handleVideoSelect
         }
         getVideoById();
     }, [id, apiKey, currentVideo.id]);
-    
 
     return (
         <div>

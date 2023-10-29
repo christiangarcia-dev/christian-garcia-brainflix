@@ -25,17 +25,17 @@
     }
 
     &__logo {
-        height: 30px;
+        height: 1.875rem;
         width: auto;
         margin-block: 1rem;
         cursor: pointer;
 
         @include tablet {
-            height: 32px;
+            height: 2rem;
         }
 
         @include desktop {
-            height: 28px;
+            height: 1.75rem;
         }
     }
 
@@ -55,11 +55,11 @@
     }
 
     &__search-input {
-        height: 40px;
+        height: 2.5rem;
         width: 100%;
         border: 1px solid $mercury;
         border-radius: 4px;
-        min-width: 240px;
+        min-width: 15rem;
         padding: 12px 12px 12px 35px;
         background-color: $alabaster;
         color: $black;
@@ -75,8 +75,8 @@
 
         @include tablet {
             margin-bottom: 0;
-            min-width: 260px;
-            height: 45px;
+            min-width: 16.25rem;
+            height: 2.8125rem;
         }
 
         &-icon {
@@ -96,8 +96,8 @@
 
     &__avatar {
         background-color: $mercury;
-        width: 44px;
-        height: 44px;
+        width: 2.75rem;
+        height: 2.75rem;
         border-radius: 50%;
         background-image: url(../../assets/images/Mohan-muruge.jpg);
         background-position: 10%;
@@ -106,8 +106,8 @@
         margin-top: -2px;
 
         @include tablet {
-            width: 50px;
-            height: 50px;
+            width: 3.125rem;
+            height: 3.125rem;
             position: absolute;
             right: 3rem;
             margin-top: -2.6px;

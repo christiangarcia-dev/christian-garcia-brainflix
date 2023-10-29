@@ -2,10 +2,6 @@ import './Comments.scss';
 import commentIcon from '../../assets/icons/add_comment.svg';
 
 function Comments({ comments }) {
-
-    if (!comments) {
-        return <div>Loading comments...</div>;
-    }
     
     return (
         <>
@@ -20,7 +16,7 @@ function Comments({ comments }) {
                             <label className="comments__label" htmlFor="comments-input">Join the conversation</label>
                             <textarea className="comments__input" type="text" name="comment" placeholder="Add a new comment" id="comments-input"></textarea>
                         </div>
-                        <button className="comments__submit-button" type="submit"><img className='comments__submit-button-icon' src={commentIcon} alt="comment icon"></img>Comment</button>             
+                        <button className="comments__submit-button"><img className='comments__submit-button-icon' src={commentIcon} alt="comment icon"></img>Comment</button>             
                     </div>       
                 </form>
             </section>
