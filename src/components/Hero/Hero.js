@@ -1,5 +1,4 @@
 import './Hero.scss'
-import React, { useRef } from 'react';
 
 function Hero({currentVideo}) {
 
