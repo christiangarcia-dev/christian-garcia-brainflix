@@ -32,7 +32,6 @@ function HomePage() {
         }
     }, [currentVideo, videos]); 
 
-    // Fetches all videos + sets the first video as the current video
     useEffect(() => {
         const fetchVideos = async () => {
             axios.get('http://localhost:8085/videos')
@@ -41,6 +40,7 @@ function HomePage() {
 
                     if (response.data.length > 0) {
                         setCurrentVideo(response.data[0]);
+                        console.log('first video mounted');
                         setSideVideos(response.data.slice(1));
                     }
                 })
@@ -49,7 +49,6 @@ function HomePage() {
         fetchVideos();
     }, []);
 
-    // Fetches single video by id + sets it as the current video
     useEffect(() => {
         if (id) {
             axios.get(`http://localhost:8085/videos/${id}`)
