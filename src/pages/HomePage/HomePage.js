@@ -57,7 +57,6 @@ function HomePage() {
                 })
                 .catch(error => console.error('Error fetching video details:', error));
         } else if (videos.length > 0) {
-            // If there's no id in the url, set the first video as the current video
             setCurrentVideo(videos[0]);
         }
     }, [id, videos]);
