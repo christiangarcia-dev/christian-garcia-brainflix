@@ -3,6 +3,7 @@ import Navbar from '../../components/Navbar/Navbar'
 import publishIcon from '../../assets/icons/publish.svg'
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function UploadPage() {
 
@@ -10,12 +11,24 @@ function UploadPage() {
 
     const handleSubmit = (event) => {
         event.preventDefault(); 
-        alert("Video upload successful"); 
-        navigate("/"); 
 
-        setTimeout(() => {
-            navigate("/");
-        }, 3000); 
+        const videoData = {
+            title: event.target.elements["video-title"].value,
+            description: event.target.elements["video-description"].value,
+            // ...other data as needed
+        };
+
+         // Post the data to the server
+        axios.post('http://localhost:8085/videos', videoData)
+            .then(response => {
+                alert("Video upload successful");
+                // Redirect or do any other actions based on successful submission
+                navigate("/");
+            })
+            .catch(error => {
+                console.error('Error uploading video:', error);
+                alert("Video upload failed");
+        });
     };
 
     return(
