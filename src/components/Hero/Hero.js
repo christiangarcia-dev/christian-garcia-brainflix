@@ -4,7 +4,7 @@ function Hero({currentVideo}) {
 
     return(
         <section className='hero'>
-            <video className='hero__video' poster={currentVideo.image} controls></video>
+            <video className='hero__video' poster={currentVideo.image} alt={currentVideo.title} controls></video>
         </section>
     )
 }

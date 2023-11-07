@@ -10,7 +10,7 @@ function NextVideos({videos}) {
                 {videos.map(video => (
                     <Link to={`/videos/${video.id}`} key={video.id} className='videos__item'>
                         <div className='videos__item__thumbnail-container'>
-                            <img className='videos__item__thumbnail' src={video.image}></img>
+                            <img className='videos__item__thumbnail' src={video.image} alt={video.title}></img>
                         </div>
                         <div className='videos__item__text-container'>
                             <h3 className='videos__item__title'>{video.title}</h3>

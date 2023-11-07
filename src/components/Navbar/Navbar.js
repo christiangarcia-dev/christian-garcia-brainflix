@@ -16,7 +16,7 @@ function Navbar() {
                         <img className='navbar__search-input-icon' src={searchIcon}></img>
                         <input className="navbar__search-input" placeholder="Search"></input>
                     </label>
-                    <div className="navbar__avatar"></div>
+                    <div className="navbar__avatar" alt="user avatar"></div>
                 </div>
                 <NavLink className="navbar__upload-button-link" to="/upload">
                     <button className="navbar__upload-button">

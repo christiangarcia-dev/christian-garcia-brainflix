@@ -1,6 +1,7 @@
 import './HomePage.scss';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import Navbar from '../../components/Navbar/Navbar';
 import Hero from '../../components/Hero/Hero';
@@ -8,39 +9,78 @@ import VideoInfo from '../../components/VideoInfo/VideoInfo';
 import Comments from '../../components/Comments/Comments';
 import NextVideos from '../../components/NextVideos/NextVideos';
 
-function HomePage({ currentVideo, setCurrentVideo, sideVideos, handleVideoSelect }) {
-    const apiKey = '6b4b2c7a-2b87-45bc-a0ba-978e289aa20c';
-    let { id } = useParams();
+function HomePage() {
+    const [videos, setVideos] = useState([]);
+    const [currentVideo, setCurrentVideo] = useState({});
+    const [sideVideos, setSideVideos] = useState([]);
+    const [previousVideo, setPreviousVideo] = useState(null);
+    const { id } = useParams(); 
+
+    const handleVideoSelect = (selectedVideo) => {
+        if (currentVideo && currentVideo.id !== selectedVideo.id) {
+            setSideVideos(prevSideVideos => [currentVideo, ...prevSideVideos]);
+        }
+        
+        setCurrentVideo(selectedVideo);
+        setSideVideos(prevSideVideos => prevSideVideos.filter(video => video.id !== selectedVideo.id));
+        setPreviousVideo(currentVideo);
+    };
 
     useEffect(() => {
-        async function getVideoById() {
-            if (id && id !== currentVideo.id) {
-                axios.get(`https://project-2-api.herokuapp.com/videos/${id}?api_key=${apiKey}`) 
-                    .then(response => {
-                        setCurrentVideo(response.data);
-                    })
-                    .catch(error => console.error('Error fetching video details:', error));
-            }
+        if (currentVideo && currentVideo.id) {
+            setSideVideos(videos.filter(video => video.id !== currentVideo.id));
         }
-        getVideoById();
-    }, [id, apiKey, currentVideo.id]);
+    }, [currentVideo, videos]); 
+
+    useEffect(() => {
+        const fetchVideos = async () => {
+            axios.get('http://localhost:8085/videos')
+                .then(response =>  {
+                    setVideos(response.data);
+
+                    if (response.data.length > 0) {
+                        setCurrentVideo(response.data[0]);
+                        console.log('first video mounted');
+                        setSideVideos(response.data.slice(1));
+                    }
+                })
+                .catch(error => console.error('Error fetching videos:', error));
+        }
+        fetchVideos();
+    }, []);
+
+    useEffect(() => {
+        if (id) {
+            axios.get(`http://localhost:8085/videos/${id}`)
+                .then(response => {
+                    setCurrentVideo(response.data);
+                })
+                .catch(error => console.error('Error fetching video details:', error));
+        } else if (videos.length > 0) {
+            setCurrentVideo(videos[0]);
+        }
+    }, [id, videos]);
+
+    if (!currentVideo || sideVideos.length === 0) {
+        return <div>Loading...</div>;
+    }
 
     return (
-        <div>
-            <div>
+        <>
+            <header>
                 <Navbar />
                 <Hero currentVideo={currentVideo}/>
-            </div>
-            <div className='main'>
-                <div className='main__one'>
+            </header>
+            <main className='main'>
+                <section className='main__one'>
                     <VideoInfo videoDetails={currentVideo} />
                     <Comments comments={currentVideo?.comments || []} />
-                </div>
-                <div className='main__two'>
+                </section>
+                <section className='main__two'>
                     <NextVideos videos={sideVideos} onVideoSelect={handleVideoSelect} />
-                </div>
-            </div>
-        </div>
+                </section>
+            </main>
+        </>
     )
 }
 

@@ -24,7 +24,7 @@ function Comments({ comments }) {
                 {comments.map(comment => (
                     <article className='entries__comment' key={comment.id}>
                         <div className='entries__comment__avatar-container'>
-                            <div className="entries__comment__avatar"></div>
+                            <div className="entries__comment__avatar" alt="user avatar"></div>
                         </div>
                         <div className='entries__comment__text'>
                             <div className='entries__comment__subgroup'>
