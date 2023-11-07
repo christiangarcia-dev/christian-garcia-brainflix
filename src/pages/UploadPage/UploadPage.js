@@ -4,6 +4,7 @@ import publishIcon from '../../assets/icons/publish.svg'
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import defaultThumbnail from '../../assets/images/upload-video-preview.jpg';
 
 function UploadPage() {
 
@@ -15,14 +16,12 @@ function UploadPage() {
         const videoData = {
             title: event.target.elements["video-title"].value,
             description: event.target.elements["video-description"].value,
-            // ...other data as needed
+            image: '/static/images/upload-video-preview.jpg'
         };
 
-         // Post the data to the server
         axios.post('http://localhost:8085/videos', videoData)
             .then(response => {
                 alert("Video upload successful");
-                // Redirect or do any other actions based on successful submission
                 navigate("/");
             })
             .catch(error => {
@@ -40,14 +39,14 @@ function UploadPage() {
                     <article className='upload__form'>
                         <div className='upload__thumbnail-container'>
                             <h3 className='upload__thumbnail-header'>Video thumbnail</h3>
-                            <img className='upload__thumbnail' src=''></img>
+                            <img className='upload__thumbnail' src={defaultThumbnail} alt='upload thumbnail'></img>
                         </div>
 
                         <div className='upload__form__input-group'>
                             <label className="upload__form__label" htmlFor="video-title">Title your video</label>
                             <input className='upload__form__input' placeholder="Add a title to your video" type="text" name="video-title" id="video-title"></input>
                             <lable className="upload__form__label" htmlFor="video-description">Add a video description</lable>
-                            <textarea className='upload__form__input-textarea' placeholder="Add a description to your video" type="text" name="video-title" id="video-description"></textarea>
+                            <textarea className='upload__form__input-textarea' placeholder="Add a description to your video" type="text" name="video-description" id="video-description"></textarea>
                         </div>
                     </article>
 
